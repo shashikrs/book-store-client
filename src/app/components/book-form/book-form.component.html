@@ -1,0 +1,64 @@
+<div class="book-form-container">
+  <div class="form-section">
+    <mat-card>
+      <h3>{{ isEditMode ? "Edit Book" : "Add Book" }}</h3>
+      <mat-card-title></mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="title">Title*</label>
+            <input
+              type="text"
+              id="title"
+              formControlName="title"
+              class="form-control"
+            />
+            <div
+              *ngIf="title?.invalid && (title?.dirty || title?.touched)"
+              class="error"
+            >
+              <div *ngIf="title?.errors?.['required']">Title is required.</div>
+              <div *ngIf="title?.errors?.['title']">Invalid title input.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="author">Author*</label>
+            <input
+              type="text"
+              id="author"
+              formControlName="author"
+              class="form-control"
+            />
+            <div
+              *ngIf="author?.invalid && (author?.dirty || author?.touched)"
+              class="error"
+            >
+              <div *ngIf="author?.errors?.['required']">
+                Author is required.
+              </div>
+              <div *ngIf="author?.errors?.['author']">
+                Invalid author input.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <span>*required.</span>
+          </div>
+          <button
+            type="submit"
+            class="btn primary"
+            [disabled]="bookForm.invalid"
+          >
+            {{ isEditMode ? "Update" : "Add" }}
+          </button>
+          <button type="button" class="btn secondary" (click)="cancel()">
+            Cancel
+          </button>
+        </form>
+        <div *ngIf="errorMessage" class="error">
+          {{ errorMessage }}
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+.primary-edit {
+  background-color: #80b9ad;
+  color: white;
+}
+
+.primary-edit:active {
+  background-color: #80b9ad;
+  color: white;
+}
+
+.primary-add {
+  background-color: #61a5b9;
+  color: white;
+}
+
+.primary-add:active {
+  background-color: #4f9fb8;
+  color: white;
+}
+
+.primary-delete {
+  background-color: #e28189;
+  color: white;
+}
+
+.primary-delete:active {
+  background-color: #e28189;
+  color: white;
+}
+
+button {
+  margin-right: 8px;
+}
+
+.primary-add {
+  margin-top: 3%;
+}
+
+mat-icon {
+  vertical-align: middle;
+}
+
+.mat-icon-text {
+  vertical-align: middle;
+  margin: inherit;
+}
+
+.mat-mdc-cell {
+  word-break: break-all;
+}
+
+.action-button-container {
+  display: flex;
+  text-align: center;
+}
+
+.mat-mdc-header-row {
+  background-color: #e9ebec;
+}
+
+.mat-mdc-table {
+  margin-top: 3%;
+}

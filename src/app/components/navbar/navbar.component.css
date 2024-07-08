@@ -1,0 +1,9 @@
+mat-list-item {
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+mat-toolbar {
+  background-color: #6295a2;
+}

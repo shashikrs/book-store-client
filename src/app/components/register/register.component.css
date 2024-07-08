@@ -1,0 +1,80 @@
+.login-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 100px 20px 20px 20px;
+  flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+}
+
+.text-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.form-section {
+  flex: 1;
+}
+
+.header {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #6295a2;
+}
+
+.form-group {
+  padding: 10px;
+}
+
+button {
+  margin: 10px;
+}
+
+.primary {
+  background-color: #6295a2;
+  color: white;
+}
+
+.primary:active {
+  background-color: #6295a2;
+  color: white;
+}
+
+.secondary {
+  background-color: #7b808a;
+  color: white;
+}
+
+.secondary:active {
+  background-color: #7b808a;
+  color: white;
+}
+
+h3 {
+  text-align: center;
+  padding: 1%;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+}
+
+.mat-mdc-card {
+  background-color: white;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .text-section,
+  .form-section {
+    flex: 1 1 100%;
+    margin-right: 0;
+    margin-bottom: 20px; /* Add margin between sections on small screens */
+  }
+
+  .text-section {
+    text-align: center; /* Center align the text on small screens */
+  }
+}

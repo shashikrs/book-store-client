@@ -1,0 +1,6 @@
+<mat-toolbar color="primary" *ngIf="path !== '/login' && path !== '/register'">
+  <mat-toolbar-row>
+    <mat-list-item (click)="navigateToBooks()">Books</mat-list-item>
+    <mat-list-item (click)="logout()">Logout</mat-list-item>
+  </mat-toolbar-row>
+</mat-toolbar>

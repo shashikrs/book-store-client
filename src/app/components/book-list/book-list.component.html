@@ -1,0 +1,47 @@
+<div class="container">
+  <button class="btn primary-add" (click)="addBook()">
+    <mat-icon>add</mat-icon><span class="mat-icon-text">Add Book</span>
+  </button>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Define columns -->
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td
+        mat-cell
+        *matCellDef="let book"
+        [matTooltip]="book.title"
+        [matTooltipDisabled]="isDisabled(book.title)"
+      >
+        {{ book.title | truncate : 50 }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="author">
+      <th mat-header-cell *matHeaderCellDef>Author</th>
+      <td
+        mat-cell
+        *matCellDef="let book"
+        [matTooltip]="book.author"
+        [matTooltipDisabled]="isDisabled(book.author)"
+      >
+        {{ book.author | truncate : 50 }}
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let book" class="action-cell">
+        <div class="action-button-container">
+          <button class="btn primary-edit" (click)="editBook(book._id)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button class="btn primary-delete" (click)="deleteBook(book._id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </td>
+    </ng-container>
+
+    <!-- Set up rows -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
