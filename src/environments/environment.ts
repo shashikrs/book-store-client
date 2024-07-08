@@ -1,4 +1,4 @@
 export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:3000', // Adjust the URL to your backend
+  production: true,
+  apiUrl: 'https://node-book-api.vercel.app/api/v1',
 };
