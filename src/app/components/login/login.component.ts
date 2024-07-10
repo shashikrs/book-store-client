@@ -68,7 +68,10 @@ export class LoginComponent {
         },
         error: (error) => {
           console.error('Login error:', error);
-          this.errorMessage = 'Invalid email or password';
+          this.errorMessage =
+            error.status == 404 && error?.error?.message
+              ? error.error.message
+              : 'Invalid email or password';
         },
       });
     } else {
